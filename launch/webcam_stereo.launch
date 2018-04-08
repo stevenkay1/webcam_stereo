@@ -1,0 +1,13 @@
+<launch>
+
+    <include file="$(find webcam_stereo)/launch/webcam_cameras.launch" />
+
+    <node ns="webcam_stereo_pair" pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
+        <!-- <remap from="left/image_raw" to="left/image" />
+        <remap from="right/image_raw" to="right/image" /> -->
+
+        <param name="approximate_sync" value="true" />
+        <param name="queue_size" value="10" />
+    </node>
+
+</launch>
